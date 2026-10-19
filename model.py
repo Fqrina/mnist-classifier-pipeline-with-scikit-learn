@@ -49,8 +49,13 @@ def confusion_counts(y_true, y_pred):
     c = confusion_matrix(y_true, y_pred, labels=[False, True])
     return {"TN":int(c[0][0]), "FP":int(c[0][1]), "FN":int(c[1][0]), "TP":int(c[1][1])}
 
-# Step 6 - precision_recall_f1 (not yet solved)
-# TODO: implement
+# Step 6 - precision_recall_f1
+from sklearn.metrics import precision_score, recall_score, f1_score
+def precision_recall_f1(y_true, y_pred):
+    precision = precision_score(y_true, y_pred)
+    recall = recall_score(y_true, y_pred)
+    f1 = f1_score(y_true, y_pred)
+    return (float(precision), float(recall), float(f1))
 
 # Step 7 - threshold_for_precision (not yet solved)
 # TODO: implement
